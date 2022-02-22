@@ -70,7 +70,10 @@ const App = () => {
 
       const result = await ReactNativeBlobUtil.config({
         path: filePath,
-      }).fetch('GET', 'http://www.africau.edu/images/default/sample.pdf');
+      }).fetch(
+        'GET',
+        'https://unec.edu.az/application/uploads/2014/12/pdf-sample.pdf',
+      );
 
       if (result.respInfo.status === 200) {
         console.log('Fetching local 8k image..');
@@ -90,9 +93,7 @@ const App = () => {
         // eslint-disable-next-line no-undef
         const end = performance.now();
         console.log(
-          `Got ArrayBuffer in ${end - start}ms! Size: ${
-            arrayBuffer.byteLength
-          }`,
+          `Got ArrayBuffer in ${end - start}ms! Size: ${arrayBuffer}`,
         );
 
         console.log('---- 2 ', arrayBuffer);
